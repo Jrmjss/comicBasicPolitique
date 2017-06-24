@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="canvas_game_test1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="6RJ-i3-Tia">
+                                <rect key="frame" x="337" y="-9" width="211" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="kuN-4g-4CP">
+                                <rect key="frame" x="20" y="-9" width="309" height="124"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" id="Rkq-wW-PXG">
+                                <rect key="frame" x="20" y="123" width="528" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="Ndt-My-aTl">
+                                        <rect key="frame" x="0.0" y="0.0" width="528" height="184"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="dxX-ZT-cPS" appends="YES" id="hae-ci-HrL"/>
+                                        </connections>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="CyU-Ji-Udb">
+                                        <rect key="frame" x="361" y="43" width="116" height="141"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jbody1" id="JMs-8B-Mqj">
+                                                <rect key="frame" x="16" y="37" width="89" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="KeG-2X-LoR" appends="YES" id="jYQ-pb-5WX"/>
+                                                    <outletCollection property="gestureRecognizers" destination="S0X-Op-Qvf" appends="YES" id="x2j-N4-jHu"/>
+                                                </connections>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jhead1" id="maz-nh-7rG">
+                                                <rect key="frame" x="36" y="-1" width="60" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="jpx-cA-UJi" appends="YES" id="Nh8-C2-kPF"/>
+                                                    <outletCollection property="gestureRecognizers" destination="CpZ-Og-kMJ" appends="YES" id="Co4-s3-OWG"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="rAk-RR-Qsf">
+                                        <rect key="frame" x="226" y="41" width="120" height="143"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lbody1" id="FKP-om-tA4">
+                                                <rect key="frame" x="19" y="56" width="81" height="87"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lhead1" id="Rei-zf-AXF">
+                                                <rect key="frame" x="25" y="21" width="68" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="iQK-XG-5Kd">
+                                        <rect key="frame" x="70" y="43" width="112" height="141"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mbody1" id="k1f-Vv-aMW">
+                                                <rect key="frame" x="21" y="40" width="97" height="101"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mhead1" id="DGv-kR-zCy">
+                                                <rect key="frame" x="32" y="-9" width="68" height="69"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="aBl-8u-RQF">
+                                <rect key="frame" x="8" y="123" width="277" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Mélenchon"/>
+                                    <segment title="Lepen"/>
+                                    <segment title="Macron"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleCharSwitch:" destination="BV1-FR-VrT" eventType="valueChanged" id="DHe-HJ-Twq"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                        </accessibility>
+                        <rect key="contentStretch" x="0.34999999999999998" y="0.40000000000000002" width="0.29999999999999999" height="0.84999999999999998"/>
+                    </view>
+                    <connections>
+                        <outlet property="BodyTapLeft" destination="KeG-2X-LoR" id="rvm-ta-oOL"/>
+                        <outlet property="BodyTapRight" destination="S0X-Op-Qvf" id="ZPe-Hz-cWO"/>
+                        <outlet property="CharSwitch" destination="aBl-8u-RQF" id="vgP-To-FM3"/>
+                        <outlet property="HeadTapLeft" destination="jpx-cA-UJi" id="dhs-r3-p4f"/>
+                        <outlet property="HeadTapRight" destination="CpZ-Og-kMJ" id="Ywf-tP-N9S"/>
+                        <outlet property="Jbody" destination="JMs-8B-Mqj" id="FD8-lf-uXg"/>
+                        <outlet property="Jhead" destination="maz-nh-7rG" id="S2J-Ak-Cc5"/>
+                        <outlet property="Lbody" destination="FKP-om-tA4" id="m1d-kq-WNy"/>
+                        <outlet property="Lhead" destination="Rei-zf-AXF" id="qge-cv-cka"/>
+                        <outlet property="Mbody" destination="k1f-Vv-aMW" id="fL4-aP-PEG"/>
+                        <outlet property="Mhead" destination="DGv-kR-zCy" id="uOn-Bi-PJd"/>
+                        <outlet property="frame1" destination="kuN-4g-4CP" id="5QV-Kh-ebU"/>
+                        <outlet property="frame2" destination="6RJ-i3-Tia" id="Np1-he-LWt"/>
+                        <outlet property="mainFrame" destination="Ndt-My-aTl" id="yGE-VT-3jh"/>
+                        <outlet property="mainTap" destination="dxX-ZT-cPS" id="kmc-W1-FR9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dxX-ZT-cPS">
+                    <connections>
+                        <action selector="handleMainTap:" destination="BV1-FR-VrT" id="CMl-nd-URD"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="jpx-cA-UJi">
+                    <connections>
+                        <action selector="handleHeadLeft:" destination="BV1-FR-VrT" id="BLi-ER-92s"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="CpZ-Og-kMJ">
+                    <connections>
+                        <action selector="handleHeadRight:" destination="BV1-FR-VrT" id="QpU-Hq-kK7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="KeG-2X-LoR">
+                    <connections>
+                        <action selector="handleBodyLeft:" destination="BV1-FR-VrT" id="8qw-td-8kQ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="S0X-Op-Qvf">
+                    <connections>
+                        <action selector="handleBodyRight:" destination="BV1-FR-VrT" id="Di9-wP-PXa"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-232" y="-362"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="jbody1" width="648" height="1055"/>
+        <image name="jhead1" width="375" height="420"/>
+        <image name="lbody1" width="690" height="780"/>
+        <image name="lhead1" width="474" height="474"/>
+        <image name="mbody1" width="539" height="1022"/>
+        <image name="mhead1" width="310" height="375"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
