@@ -92,13 +92,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="aBl-8u-RQF">
-                                <rect key="frame" x="8" y="123" width="277" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="aBl-8u-RQF">
+                                <rect key="frame" x="20" y="123" width="303" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Mélenchon"/>
                                     <segment title="Lepen"/>
                                     <segment title="Macron"/>
+                                    <segment title="" enabled="NO"/>
                                 </segments>
                                 <connections>
                                     <action selector="handleCharSwitch:" destination="BV1-FR-VrT" eventType="valueChanged" id="DHe-HJ-Twq"/>
@@ -121,6 +122,7 @@
                         <outlet property="Jhead" destination="maz-nh-7rG" id="S2J-Ak-Cc5"/>
                         <outlet property="Lbody" destination="FKP-om-tA4" id="m1d-kq-WNy"/>
                         <outlet property="Lhead" destination="Rei-zf-AXF" id="qge-cv-cka"/>
+                        <outlet property="MainView" destination="Rkq-wW-PXG" id="CCR-dY-spH"/>
                         <outlet property="Mbody" destination="k1f-Vv-aMW" id="fL4-aP-PEG"/>
                         <outlet property="Mhead" destination="DGv-kR-zCy" id="uOn-Bi-PJd"/>
                         <outlet property="frame1" destination="kuN-4g-4CP" id="5QV-Kh-ebU"/>
@@ -163,7 +165,7 @@
         <image name="jbody1" width="648" height="1055"/>
         <image name="jhead1" width="375" height="420"/>
         <image name="lbody1" width="690" height="780"/>
-        <image name="lhead1" width="474" height="474"/>
+        <image name="lhead1" width="539" height="475"/>
         <image name="mbody1" width="539" height="1022"/>
         <image name="mhead1" width="310" height="375"/>
     </resources>

@@ -12,8 +12,11 @@ import SpriteKit
 class GameViewController: UIViewController {
     
     @IBOutlet weak var mainFrame: UIImageView!
+    @IBOutlet weak var MainView: UIView!
     
     let background : UIImage = #imageLiteral(resourceName: "background")
+    let sendArrow : UIImage = #imageLiteral(resourceName: "Send")
+    
     let jhead1 : UIImage = #imageLiteral(resourceName: "jhead1")
     let jhead2 : UIImage = #imageLiteral(resourceName: "jhead2")
     let jhead3 : UIImage = #imageLiteral(resourceName: "jhead3")
@@ -46,6 +49,9 @@ class GameViewController: UIViewController {
     var frames : Array<UIImageView> = []
     var heads : Array<UIImage> = []
     var bodies : Array<UIImage> = []
+    var CaseHasPlayed : Array<Bool> = [false, false, true ]
+    var TrueCountArr : Array<Bool> = []
+    var TrueCount = 0
     var headsIndex = 0
     var bodiesIndex = 0
     var frameNumb = 0
@@ -56,6 +62,9 @@ class GameViewController: UIViewController {
     var Case1LastBodyIndex = 0
     var Case2LastHeadIndex = 0
     var Case2LastBodyIndex = 0
+    //var Case0HasPlayed = false
+    //var Case1HasPlayed = false
+    //var Case2HasPlayed = false
     
     var black = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
     
@@ -78,6 +87,12 @@ class GameViewController: UIViewController {
         mainFrame.layer.borderColor = black.cgColor
         mainFrame.isUserInteractionEnabled = true
         mainFrame.addGestureRecognizer(mainTap)
+        
+        CharSwitch.setImage(sendArrow, forSegmentAt: 3)
+        CharSwitch.setEnabled(false, forSegmentAt: 2)
+        //CharSwitch.setEnabled(false, forSegmentAt: 3)
+        
+        UIGraphicsBeginImageContext(MainView.bounds.size);
         
         Head = Jhead
         Body = Jbody
@@ -117,12 +132,20 @@ class GameViewController: UIViewController {
         case 0 :
             Case0LastHeadIndex = headsIndex
             Case0LastBodyIndex = bodiesIndex
+            CaseHasPlayed[0] = true
+            CharSwitch.setEnabled(false, forSegmentAt: 0)
         case 1:
             Case1LastHeadIndex = headsIndex
             Case1LastBodyIndex = bodiesIndex
+            CaseHasPlayed[1] = true
+            CharSwitch.setEnabled(false, forSegmentAt: 1)
         case 2:
             Case2LastHeadIndex = headsIndex
             Case2LastBodyIndex = bodiesIndex
+            CaseHasPlayed[2] = true
+            CharSwitch.setEnabled(false, forSegmentAt: 2)
+        case 3:
+            print("NewFrame")
         default:
             break;
         }
@@ -145,6 +168,8 @@ class GameViewController: UIViewController {
             headsIndex = Case0LastHeadIndex
             bodiesIndex = Case0LastBodyIndex
             
+            PreviousIndex = CharSwitch.selectedSegmentIndex
+            
         case 1 :
             Head = Lhead
             Body = Lbody
@@ -155,6 +180,8 @@ class GameViewController: UIViewController {
             headsIndex = Case1LastHeadIndex
             bodiesIndex = Case1LastBodyIndex
             
+            PreviousIndex = CharSwitch.selectedSegmentIndex
+            
         case 2:
             Head = Mhead
             Body = Mbody
@@ -164,6 +191,45 @@ class GameViewController: UIViewController {
             
             headsIndex = Case2LastHeadIndex
             bodiesIndex = Case2LastBodyIndex
+            
+            PreviousIndex = CharSwitch.selectedSegmentIndex
+            
+        case 3:
+            if frameNumb > 1 {
+                frameNumb = 0
+            }
+            
+            UIGraphicsBeginImageContextWithOptions(MainView.bounds.size, true, 0)
+            MainView.drawHierarchy(in: MainView.bounds, afterScreenUpdates: true)
+            
+            frames[frameNumb].image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            frames[frameNumb].layer.borderWidth = 1
+            frames[frameNumb].layer.borderColor = black.cgColor
+            frameNumb = frameNumb+1
+
+            CharSwitch.setEnabled(false, forSegmentAt: 3)
+            CaseHasPlayed[0] = false
+            CharSwitch.setEnabled(true, forSegmentAt: 0)
+            CaseHasPlayed[1] = false
+            CharSwitch.setEnabled(true, forSegmentAt: 1)
+            CaseHasPlayed[2] = false
+            CharSwitch.setEnabled(true, forSegmentAt: 2)
+            
+            CharSwitch.selectedSegmentIndex = 2
+            
+            Head = Mhead
+            Body = Mbody
+            
+            heads = [mhead1,mhead2,mhead3]
+            bodies = [mbody1,mbody2]
+            
+            headsIndex = Case2LastHeadIndex
+            bodiesIndex = Case2LastBodyIndex
+            
+            PreviousIndex = CharSwitch.selectedSegmentIndex
+            
+            
             
         default:
             break;
@@ -176,20 +242,21 @@ class GameViewController: UIViewController {
         Body.addGestureRecognizer(BodyTapRight)
         Body.isUserInteractionEnabled = true
         
-        PreviousIndex = CharSwitch.selectedSegmentIndex
+        
+        TrueCountArr = CaseHasPlayed.filter { $0 }
+        TrueCount = TrueCountArr.count
+        
+        if TrueCount == CharSwitch.numberOfSegments-2 {
+            CharSwitch.setEnabled(true, forSegmentAt: 3)
+        }
+        print(TrueCount)
+        //print(CharSwitch.selectedSegmentIndex)
+        //print(PreviousIndex)
     }
     
-    @IBAction func handleMainTap(_ sender: Any) {
-        if frameNumb <= 1 {
-            frames[frameNumb].image = mainFrame.image
-            frames[frameNumb].layer.borderWidth = 1
-            frames[frameNumb].layer.borderColor = black.cgColor
-            frameNumb = frameNumb+1
-        } else {
-            print("that's it for now!:)")
-        }
+    //@IBAction func handleMainTap(_ sender: Any) {
         
-    }
+    //}
     
     @IBAction func handleHeadLeft(_ sender: Any) {
         print("left")
